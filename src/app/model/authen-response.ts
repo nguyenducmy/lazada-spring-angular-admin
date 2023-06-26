@@ -5,7 +5,7 @@ export class AuthenResponse {
 
   constructor(private res: any) {
     this._code = res.code;
-    this._token = res.token.toString();
+    this._token = res.token;
     this._status = res.status;
   }
 

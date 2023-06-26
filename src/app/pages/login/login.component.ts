@@ -28,6 +28,12 @@ export class LoginComponent {
         console.log(res);
         this.authenResponse = new AuthenResponse(res);
         console.log(this.authenResponse.token);
+        if(res.code === '200'){
+          this.router.navigate(['home'])
+        }else{
+          this.loginWarning = 'Authentication failed, Please try again';
+          this.router.navigate(['login'])
+        }
       });
 
   }
